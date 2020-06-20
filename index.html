@@ -4,6 +4,22 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
+<?<script>
+
+function checkPasswordMatch() {
+    var password = $("#txtNewPassword").val();
+    var confirmPassword = $("#txtConfirmPassword").val();
+
+    if (password != confirmPassword)
+        $("#divCheckPasswordMatch").html("Passwords do not match!");
+    else
+        $("#divCheckPasswordMatch").html("Passwords match.");
+}
+
+</script>
+
+
+
 <html>
 	<head>
 		<title>Milestone 2 | IT490</title>
@@ -67,7 +83,35 @@
 								</ul>
 							</article>
 								-->
+							
+								<!-- Register -->
+							<section>
 
+								<article>
+									<header>
+										<span class="date">Register</span>
+										<h2><a href="#">Sed magna<br />
+										ipsum faucibus</a></h2>
+									</header>
+									<form action="./registerAction.php" method="post">
+										<div class="td">
+											<input type="password" id="txtNewPassword" />
+										</div>
+										<div class="td">
+											<input type="password" id="txtConfirmPassword" onChange="checkPasswordMatch();" />
+										</div>
+											<div class="registrationFormAlert" id="divCheckPasswordMatch">
+										</div>
+										<input type='submit' value="Register">
+									</form>
+									
+									
+								</article>
+
+							</section>
+
+
+							
 						<!-- Posts -->
 						<!--
 							<section class="posts">
