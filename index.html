@@ -14,19 +14,11 @@
           integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
           crossorigin="anonymous">
     <link href="css/main.css" rel="stylesheet">
-</head>
-<header>
-    <div class="row">
-        <div class="logo-row">
-                  
-        <h1 style="padding-left: 25px;"><a href="index.html"><img src="E.png" alt="Logo" width="48" height="32"></a>Cure Your Obesity</h1>
-    </div>
-    </div>
-</header>
-<body>
-
-<style>
-* {box-sizing:border-box}
+    <style>
+* {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
 
 /* Slideshow container */
 .slideshow-container {
@@ -35,19 +27,14 @@
   margin: auto;
 }
 
-/* Hide the images by default */
-.mySlides {
-  display: none;
-}
-
 /* Next & previous buttons */
 .prev, .next {
   cursor: pointer;
   position: absolute;
   top: 50%;
   width: auto;
-  margin-top: -22px;
   padding: 16px;
+  margin-top: -22px;
   color: white;
   font-weight: bold;
   font-size: 18px;
@@ -112,19 +99,30 @@
 }
 
 @-webkit-keyframes fade {
-  from {opacity: .4}
+  from {opacity: .4} 
   to {opacity: 1}
 }
 
 @keyframes fade {
-  from {opacity: .4}
+  from {opacity: .4} 
   to {opacity: 1}
 }
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
 </style>
-
-<script>
-
-</script>
+</head>
+<header>
+    <div class="row">
+        <div class="logo-row">
+                  
+        <h1 style="padding-left: 25px;"><a href="index.html"><img src="E.png" alt="Logo" width="48" height="32"></a>Cure Your Obesity</h1>
+    </div>
+    </div>
+</header>
+<body>
 
 <div class="container-fluid">
     <div class="row">
@@ -166,43 +164,72 @@
         
     </div>
     <hr>
-    <div class="slideshow-container">
+    <!--
+    <div class="carousel slide" >
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="obesity.png>
+                <div class="carousel-caption">
+
+    
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+    -->
 
 
+
+<!-- Slideshow container -->
+<div class="slideshow-container">
 
   <!-- Full-width images with number and caption text -->
   <div class="mySlides fade">
-      <div class="numbertext">1 / 3</div>
-      <img src="img1.jpg" style="width:100%">
-      <div class="text">Caption Text</div>
-    </div>
-  
-    <div class="mySlides fade">
-      <div class="numbertext">2 / 3</div>
-      <img src="img2.jpg" style="width:100%">
-      <div class="text">Caption Two</div>
-    </div>
-  
-    <div class="mySlides fade">
-      <div class="numbertext">3 / 3</div>
-      <img src="img3.jpg" style="width:100%">
-      <div class="text">Caption Three</div>
-    </div>
-  
-    <!-- Next and previous buttons -->
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    <div class="numbertext">1 / 3</div>
+    <img src="obesity.png" style="width:100%">
+    <div class="text">Caption Text</div>
   </div>
-  <br>
-  
-  <!-- The dots/circles -->
-  <div style="text-align:center">
-    <span class="dot" onclick="currentSlide(1)"></span>
-    <span class="dot" onclick="currentSlide(2)"></span>
-    <span class="dot" onclick="currentSlide(3)"></span>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 3</div>
+    <img src="ob2.jpg" style="width:100%">
+    <div class="text">Caption Two</div>
   </div>
-  
-  
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 3</div>
+    <img src="ob3.jpg" style="width:100%">
+    <div class="text">Caption Three</div>
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         <div class="row">
             <div class="card">
@@ -247,5 +274,33 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+        <script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
 </body>
 </html>
